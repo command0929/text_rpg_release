@@ -587,6 +587,7 @@ if (stage == 2) {
              rpg[id].exp -= rpg[id].expM;
              upLevel.amount++;
              rpg[id].lv++;
+             rpg[id].expM = Math.floor(rpg[id].expM * 1.1 * 1.2);
              java.lang.Thread.sleep(30);
              if(!(rpg[id].expM <= rpg[id].exp)) i++;
            }
