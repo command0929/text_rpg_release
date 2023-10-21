@@ -23,7 +23,9 @@
 
 /**
 
+MIT License
 
+Copyright (c) 2023 command0929
 
 */
 
