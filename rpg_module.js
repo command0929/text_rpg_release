@@ -103,7 +103,6 @@ function joinV(name, id) {
   give: {}}}};
   return data;
 }
-const tools = require('tools');
 const line = '─'.repeat(20);
 function on(path, prefix, msg, name, id, sende, type) {
   if (type == 1 || type == 2) 
@@ -493,6 +492,7 @@ if (stage == 2) {
         for (var i = 0; i < 16; i++) {
           var eL = maod * i + Math.floor(aon);
           enemy = {
+  name: Math.floor(Math.random() * 899) + 100,
   lv: eL, 
   hp: 45 * eL, 
   shield: 3 * eL, 
@@ -542,7 +542,7 @@ if (stage == 2) {
             return send(name + '님, 올바르지 않은 적 아이디야!');
             rpg[id].enemy.status = rpg[id].enemy.list[enemyId];
             rpg[id].enemy.fight = 1;
-            tools.jrite(path1 + 'user/' + enemyId + '.json', rpg[id]);
+            tools.jrite(path1 + 'user/' + id + '.json', rpg[id]);
             send(name+'님, [ Lv.'+rpg[id].enemy.status.lv+' ] '+rpg[id].enemy.status.name+
             ' 을 사냥시작했어!'+'\u200b'.repeat(500)+'\n\n\n'+'[ Lv.'+ac(rpg[id].enemy.list[enemyId].lv)+' ] '+
               rpg[id].enemy.list[enemyId].name+' ( Id : '+i+' )\n체력 : '+ac(rpg[id].enemy.list[enemyId].hp)+' / '+ac(rpg[id].enemy.list[enemyId].maxhp)+
@@ -589,7 +589,7 @@ if (stage == 2) {
              rpg[id].lv++;
              rpg[id].expM = Math.floor(rpg[id].expM * 1.1 * 1.2);
              java.lang.Thread.sleep(30);
-             if(!(rpg[id].expM <= rpg[id].exp)) i++;
+             if((rpg[id].expM <= rpg[id].exp)) i++;
            }
            if(upLevel.is) {
              for(var ko=0;ko<upLevel.amount;ko++){
