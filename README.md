@@ -33,7 +33,7 @@ const scriptName = 'text_rpg';
 
 var text_rpg = require('rpg_module').on;
 function response(room, msg, sender, isGroupChat, replier, imageDB, packageName) {
-  text_rpg('Download/rpgData/', ';알피지', msg, sender, imageDB.getProfileHash(), replier, 0);
+  text_rpg('Download/rpgData/' /* 기본 위치를 제외한 저장 폴더 위치 */, ';알피지' /* 알피지 접두사 */, msg /* 보낸 내용 */, sender /* 보낸 이의 이름 */, imageDB.getProfileHash() /* 유저 구분 아이디 */, replier /* 전송용 함수 ( 건들지 말 것 ) */, 0 /* 건들지 말 것 */);
 }
 
 ```
