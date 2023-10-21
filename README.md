@@ -1,1 +1,1 @@
-# text_rpg_release
+# 텍스트 알피지 [ 배포용 ]
